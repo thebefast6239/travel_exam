@@ -22,39 +22,45 @@ QT_BEGIN_NAMESPACE
 class Ui_profile_widget
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *profile_widget_layout;
     QPushButton *editRouteButton;
     QPushButton *backButton;
     QSpacerItem *verticalSpacer;
+    QPushButton *deleteRouteButton;
     QListWidget *listWidget;
 
     void setupUi(QWidget *profile_widget)
     {
         if (profile_widget->objectName().isEmpty())
             profile_widget->setObjectName("profile_widget");
-        profile_widget->resize(545, 344);
-        widget = new QWidget(profile_widget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(100, 40, 311, 241));
-        profile_widget_layout = new QGridLayout(widget);
+        profile_widget->resize(425, 305);
+        layoutWidget = new QWidget(profile_widget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(20, 20, 379, 278));
+        profile_widget_layout = new QGridLayout(layoutWidget);
         profile_widget_layout->setObjectName("profile_widget_layout");
         profile_widget_layout->setContentsMargins(0, 0, 0, 0);
-        editRouteButton = new QPushButton(widget);
+        editRouteButton = new QPushButton(layoutWidget);
         editRouteButton->setObjectName("editRouteButton");
 
         profile_widget_layout->addWidget(editRouteButton, 0, 1, 2, 1);
 
-        backButton = new QPushButton(widget);
+        backButton = new QPushButton(layoutWidget);
         backButton->setObjectName("backButton");
 
-        profile_widget_layout->addWidget(backButton, 4, 0, 1, 2);
+        profile_widget_layout->addWidget(backButton, 6, 0, 1, 2);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        profile_widget_layout->addItem(verticalSpacer, 2, 1, 1, 1);
+        profile_widget_layout->addItem(verticalSpacer, 3, 1, 1, 1);
 
-        listWidget = new QListWidget(widget);
+        deleteRouteButton = new QPushButton(layoutWidget);
+        deleteRouteButton->setObjectName("deleteRouteButton");
+
+        profile_widget_layout->addWidget(deleteRouteButton, 4, 1, 1, 1);
+
+        listWidget = new QListWidget(layoutWidget);
         listWidget->setObjectName("listWidget");
         QSizePolicy sizePolicy(QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::MinimumExpanding);
         sizePolicy.setHorizontalStretch(0);
@@ -62,7 +68,7 @@ public:
         sizePolicy.setHeightForWidth(listWidget->sizePolicy().hasHeightForWidth());
         listWidget->setSizePolicy(sizePolicy);
 
-        profile_widget_layout->addWidget(listWidget, 0, 0, 3, 1);
+        profile_widget_layout->addWidget(listWidget, 0, 0, 5, 1);
 
 
         retranslateUi(profile_widget);
@@ -72,9 +78,10 @@ public:
 
     void retranslateUi(QWidget *profile_widget)
     {
-        profile_widget->setWindowTitle(QCoreApplication::translate("profile_widget", "Form", nullptr));
+        profile_widget->setWindowTitle(QCoreApplication::translate("profile_widget", "Travelfimov | \320\237\321\200\320\276\321\204\320\270\320\273\321\214", nullptr));
         editRouteButton->setText(QCoreApplication::translate("profile_widget", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\277\321\203\321\202\321\214", nullptr));
         backButton->setText(QCoreApplication::translate("profile_widget", "\320\222\320\265\321\200\320\275\321\203\321\202\321\214\321\201\321\217 \320\275\320\260\320\267\320\260\320\264", nullptr));
+        deleteRouteButton->setText(QCoreApplication::translate("profile_widget", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\277\321\203\321\202\321\214", nullptr));
     } // retranslateUi
 
 };

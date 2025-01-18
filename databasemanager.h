@@ -28,6 +28,10 @@ public:
     QVariant getSingleValue(const QString& query, const QVariantList& values);
     QList<QVariantList> getMultipleValues(const QString& query);
     QList<QVariantList> getMultipleValues(const QString& query, const QVariantList& values);
+    QList<QString> getTravelGroups();
+    QList<QVariantList> getUserRoutes(int userId);
+    bool saveRoute(int userId, const QString& title, const QString& description, int groupId, const QList<QString>& points);
+    bool deleteRoute(int userId, const QString& title);
 
 private:
     QSqlDatabase db_;

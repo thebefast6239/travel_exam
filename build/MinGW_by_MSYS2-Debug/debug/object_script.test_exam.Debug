@@ -1,11 +1,15 @@
 debug/main.o
+debug/createroutewindow.o
 debug/databasemanager.o
 debug/loginwindow.o
 debug/mainwindow.o
+debug/profilewindow.o
 debug/registerwindow.o
 debug/usermanager.o
 debug/moc_databasemanager.o
+debug/moc_createroutewindow.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
+debug/moc_profilewindow.o
 debug/moc_registerwindow.o
 debug/moc_usermanager.o

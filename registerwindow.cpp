@@ -4,7 +4,7 @@
 #include "loginwindow.h"
 
 RegisterWindow::RegisterWindow(DatabaseManager *dbManager, QWidget *parent) :
-    QWidget(parent),
+    QWidget(nullptr), // <-- Создаем RegisterWindow без родителя
     ui(new Ui_register_widget),
     userManager_(dbManager),
     dbManager_(dbManager)
@@ -36,9 +36,10 @@ void RegisterWindow::on_registerRegisterButton_clicked()
 
     if (userManager_.registerUser(username, password)) {
         QMessageBox::information(this, "Успех", "Регистрация успешна.");
-        LoginWindow *loginWindow = new LoginWindow(dbManager_);
+        LoginWindow *loginWindow = new LoginWindow(dbManager_, nullptr); // <-- Создаем LoginWindow без родителя
         loginWindow->show();
-        this->deleteLater(); // <-- Отложенное удаление окна ПОСЛЕ показа нового
+        this->close(); // <-- Закрываем текущее окно
+
     } else {
         ui->registerMessageLabel->setText("Ошибка регистрации. Возможно, пользователь уже существует.");
     }
@@ -46,7 +47,8 @@ void RegisterWindow::on_registerRegisterButton_clicked()
 
 void RegisterWindow::on_registerCancelButton_clicked()
 {
-    LoginWindow *loginWindow = new LoginWindow(dbManager_);
+    LoginWindow *loginWindow = new LoginWindow(dbManager_, nullptr); // <-- Создаем LoginWindow без родителя
     loginWindow->show();
-    this->deleteLater(); // <-- Отложенное удаление окна ПОСЛЕ показа нового
+    this->close(); // <-- Закрываем текущее окно
+
 }

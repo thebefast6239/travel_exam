@@ -107,3 +107,48 @@ QList<QVariantList> DatabaseManager::getMultipleValues(const QString& query, con
     }
     return result;
 }
+
+QList<QString> DatabaseManager::getTravelGroups()
+{
+    QList<QString> groups;
+    QSqlQuery query = executeQuery("SELECT name FROM travel_groups;");
+
+    while (query.next()) {
+        groups.append(query.value(0).toString());
+    }
+
+    return groups;
+}
+QList<QVariantList> DatabaseManager::getUserRoutes(int userId)
+{
+    QList<QVariantList> routes;
+    QSqlQuery query = executeQuery("SELECT title FROM routes WHERE user_id = ?;", {userId});
+
+    while (query.next()) {
+        QVariantList route;
+        route.append(query.value(0));
+        routes.append(route);
+    }
+
+    return routes;
+}
+
+bool DatabaseManager::saveRoute(int userId, const QString& title, const QString& description, int groupId, const QList<QString>& points)
+{
+    QSqlQuery query = executeQuery("INSERT INTO routes (user_id, group_id, title, description) VALUES (?, ?, ?, ?);",
+                                   {userId, groupId, title, description});
+    if (query.numRowsAffected() <= 0)
+        return false;
+    int routeId = query.lastInsertId().toInt();
+    for (const QString& point : points) {
+        executeQuery("INSERT INTO route_points (route_id, description) VALUES (?, ?);", {routeId, point});
+    }
+
+    return true;
+}
+bool DatabaseManager::deleteRoute(int userId, const QString& title)
+{
+    QSqlQuery query = executeQuery("DELETE FROM routes WHERE user_id = ? AND title = ?;",
+                                   {userId, title});
+    return query.numRowsAffected() > 0;
+}

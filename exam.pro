@@ -11,15 +11,19 @@ TEMPLATE = app
 CONFIG += console
 
 SOURCES += main.cpp \
+    createroutewindow.cpp \
     databasemanager.cpp \
     loginwindow.cpp \
     mainwindow.cpp \
+    profilewindow.cpp \
     registerwindow.cpp \
     usermanager.cpp
 
 HEADERS += databasemanager.h \
+    createroutewindow.h \
     loginwindow.h \
     mainwindow.h \
+    profilewindow.h \
     registerwindow.h \
     usermanager.h
 

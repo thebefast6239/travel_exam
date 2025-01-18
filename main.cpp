@@ -18,7 +18,14 @@ int main(int argc, char *argv[])
         dbManager.executeQuery("CREATE TABLE IF NOT EXISTS route_points (id INTEGER PRIMARY KEY AUTOINCREMENT, route_id INTEGER NOT NULL, latitude REAL NOT NULL, longitude REAL NOT NULL, description TEXT, FOREIGN KEY (route_id) REFERENCES routes(id));");
         dbManager.executeQuery("CREATE TABLE IF NOT EXISTS ratings (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, route_id INTEGER NOT NULL, rating INTEGER NOT NULL, FOREIGN KEY (user_id) REFERENCES users(id), FOREIGN KEY (route_id) REFERENCES routes(id));");
 
-        LoginWindow *loginWindow = new LoginWindow(&dbManager);
+        // Добавление данных в таблицу travel_groups
+        dbManager.executeQuery("INSERT INTO travel_groups (name) VALUES ('Горы');");
+        dbManager.executeQuery("INSERT INTO travel_groups (name) VALUES ('Море');");
+        dbManager.executeQuery("INSERT INTO travel_groups (name) VALUES ('Острова');");
+        dbManager.executeQuery("INSERT INTO travel_groups (name) VALUES ('Города');");
+        dbManager.executeQuery("INSERT INTO travel_groups (name) VALUES ('Природа');");
+
+        LoginWindow *loginWindow = new LoginWindow(&dbManager); // <-- Создаем в куче
         loginWindow->show();
     } else {
         qDebug() << "Failed to connect to the database.";

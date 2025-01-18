@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>555</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Travelfimov | Main</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QListWidget" name="travelGroupsList">
@@ -30,7 +30,7 @@
       <x>340</x>
       <y>90</y>
       <width>171</width>
-      <height>191</height>
+      <height>141</height>
      </rect>
     </property>
     <widget class="QWidget" name="page"/>
@@ -41,12 +41,25 @@
      <rect>
       <x>40</x>
       <y>10</y>
-      <width>75</width>
-      <height>24</height>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Профиль</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="createRouteButton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>253</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Создать маршрут</string>
     </property>
    </widget>
   </widget>
@@ -55,7 +68,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>555</width>
      <height>22</height>
     </rect>
    </property>

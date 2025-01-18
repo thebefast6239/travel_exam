@@ -38,10 +38,10 @@ public:
     {
         if (register_widget->objectName().isEmpty())
             register_widget->setObjectName("register_widget");
-        register_widget->resize(400, 300);
+        register_widget->resize(236, 280);
         layoutWidget = new QWidget(register_widget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(130, 30, 141, 228));
+        layoutWidget->setGeometry(QRect(20, 20, 191, 231));
         register_widget_layout = new QVBoxLayout(layoutWidget);
         register_widget_layout->setObjectName("register_widget_layout");
         register_widget_layout->setContentsMargins(0, 0, 0, 0);

@@ -30,6 +30,7 @@ public:
     QWidget *page;
     QWidget *page_2;
     QPushButton *profileButton;
+    QPushButton *createRouteButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,7 +38,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(555, 349);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         travelGroupsList = new QListWidget(centralwidget);
@@ -45,7 +46,7 @@ public:
         travelGroupsList->setGeometry(QRect(40, 90, 256, 192));
         routesStackedWidget = new QStackedWidget(centralwidget);
         routesStackedWidget->setObjectName("routesStackedWidget");
-        routesStackedWidget->setGeometry(QRect(340, 90, 171, 191));
+        routesStackedWidget->setGeometry(QRect(340, 90, 171, 141));
         page = new QWidget();
         page->setObjectName("page");
         routesStackedWidget->addWidget(page);
@@ -54,11 +55,14 @@ public:
         routesStackedWidget->addWidget(page_2);
         profileButton = new QPushButton(centralwidget);
         profileButton->setObjectName("profileButton");
-        profileButton->setGeometry(QRect(40, 10, 75, 24));
+        profileButton->setGeometry(QRect(40, 10, 81, 41));
+        createRouteButton = new QPushButton(centralwidget);
+        createRouteButton->setObjectName("createRouteButton");
+        createRouteButton->setGeometry(QRect(330, 253, 191, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 555, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -71,8 +75,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Travelfimov | Main", nullptr));
         profileButton->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\276\321\204\320\270\320\273\321\214", nullptr));
+        createRouteButton->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \320\274\320\260\321\200\321\210\321\200\321\203\321\202", nullptr));
     } // retranslateUi
 
 };

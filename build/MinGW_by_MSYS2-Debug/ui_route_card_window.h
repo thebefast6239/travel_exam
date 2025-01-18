@@ -37,7 +37,7 @@ public:
     {
         if (route_card_widget->objectName().isEmpty())
             route_card_widget->setObjectName("route_card_widget");
-        route_card_widget->resize(689, 452);
+        route_card_widget->resize(523, 389);
         layoutWidget = new QWidget(route_card_widget);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(40, 40, 441, 321));
