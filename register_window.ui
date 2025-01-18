@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>register_widget</class>
+ <widget class="QWidget" name="register_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>141</width>
+     <height>228</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="register_widget_layout">
+    <item>
+     <widget class="QLabel" name="registerUsernameLabel">
+      <property name="text">
+       <string>Имя пользователя</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="registerUsernameEdit">
+      <property name="placeholderText">
+       <string>kriper2004</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="registerPasswordLabel">
+      <property name="text">
+       <string>Пароль</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="registerPasswordEdit">
+      <property name="placeholderText">
+       <string>pass</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="registerConfirmPasswordLabel">
+      <property name="text">
+       <string>Подтвердите пароль</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="registerConfirmPasswordEdit">
+      <property name="placeholderText">
+       <string>pass</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="registerRegisterButton">
+      <property name="text">
+       <string>Зарегистрироваться!</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="registerCancelButton">
+      <property name="text">
+       <string>Отмена</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="registerMessageLabel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
